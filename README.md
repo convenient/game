@@ -1,1 +1,1 @@
-# pixi-game
+# game
