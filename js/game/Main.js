@@ -4,7 +4,7 @@ var game = new Phaser.Game(480, 480, Phaser.AUTO, 'phaser-example', {
 
 function preload() {
     game.load.image('ground_1x1', 'assets/ground_1x1.png');
-    game.load.spritesheet('player', 'assets/spaceman.png', 16, 16);
+    game.load.spritesheet('pikachu', 'assets/Pikachu.png', 32, 32);
 }
 
 var map;
@@ -35,15 +35,15 @@ function create() {
     map.setCollisionBetween(10, 10);
 
     //  Player
-    player = game.add.sprite(48, 48, 'player', 1);
-    player.animations.add('left', [8,9], 10, true);
-    player.animations.add('right', [1,2], 10, true);
-    player.animations.add('up', [11,12,13], 10, true);
-    player.animations.add('down', [4,5,6], 10, true);
+    player = game.add.sprite(50, 50, 'pikachu', 1);
+    player.animations.add('left', [3,4,5], 10, true);
+    player.animations.add('right', [6,7,8], 10, true);
+    player.animations.add('up', [9,10,11], 10, true);
+    player.animations.add('down', [0,1,2], 10, true);
 
     game.physics.enable(player, Phaser.Physics.ARCADE);
 
-    player.body.setSize(10, 14, 2, 1);
+    player.body.setSize(17, 24, 6, 4);
 
     game.camera.follow(player);
 
